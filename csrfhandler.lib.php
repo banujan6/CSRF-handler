@@ -3,8 +3,8 @@
 	/*
 	
 	Name	: Simple CSRF protection class for Core-PHP (Non-Framework).
-	By		: Banujan Balendrakumar | https://www.facebook.com/balendrakumar.banujan
-	License	: Apache License 2.0
+	By	: Banujan Balendrakumar | https://www.facebook.com/balendrakumar.banujan
+	License	: Free & Open
 	
 	*/
 	
