@@ -68,7 +68,7 @@ flushKeys() function is used to delete all active CSRF Token Keys from Session.<
 
 include("csrfhandler.lib.php");
 
-$isValid = csrf::flushKeys();
+  csrf::flushKeys();
 
 ?>
 
