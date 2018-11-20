@@ -1,4 +1,4 @@
-# CSRF-Handler
+# CSRF-Handler ![version](https://img.shields.io/badge/Version-1.0.0-green.svg) ![stars](https://img.shields.io/github/stars/banujan6/CSRF-handler.svg) ![commit](https://img.shields.io/badge/Commit-Verified-brightgreen.svg)
 <b>CSRF protection</b> class file for <b>Core-PHP</b>.<br><br>
 <b>CSRF - Cross Site Request forgery</b> is a common and dangerous <b>vulnerability</b> in <b>Web Sites/Applications</b>. 
 But we can fix it simply using tokens. This is simple PHP class file to help you to generate random tokens and verify it! 
