@@ -18,6 +18,28 @@ We released version 2.0 with better implementation. :)
 # Installation
 
 <br>
+<i><b>Via Composer</b></i>
+<br>
+<p>
+	Require the package.
+</p>
+
+```php
+	composer require banujan6/csrf-handler
+```
+<br>
+<p>Use namespace & class.</p>
+
+```php
+	<?php
+		//If you are using any frameworks, It will load autoload.php automatically. So you don't need.
+		require_once __DIR__ . '/../../vendor/autoload.php';
+		use csrfhandler\csrf as csrf;
+	?>
+```
+
+<br>
+<br>
 <i><b>Including File</b></i>
 <br><br>
 <p>Download the <b>csrf.php</b> file in directory <b>src</b>. Then include it in your PHP file.</p>
