@@ -1,77 +1,114 @@
-# CSRF-Handler ![version](https://img.shields.io/badge/Version-1.0.0-green.svg) ![stars](https://img.shields.io/github/stars/banujan6/CSRF-handler.svg) ![commit](https://img.shields.io/badge/Commit-Verified-brightgreen.svg)
-<b>CSRF protection</b> class file for <b>Core-PHP</b>.<br><br>
-<b>CSRF - Cross Site Request forgery</b> is a common and dangerous <b>vulnerability</b> in <b>Web Sites/Applications</b>. 
-But we can fix it simply using tokens. This is simple PHP class file to help you to generate random tokens and verify it! 
-<br><br>
-# Usage
-This class has just 3 functions called <b>setToken()</b>, <b>checkToken()</b>, <b>flushKeys()</b>.<br>
-<br>
+# CSRF-Handler ![version](https://img.shields.io/badge/Version-2.0-green.svg) ![stars](https://img.shields.io/github/stars/banujan6/CSRF-handler.svg) ![commit](https://img.shields.io/badge/Commit-Verified-brightgreen.svg)
+<b>CSRF protection</b> class file for <b>PHP</b>.<br><br>
+<b>Bye Bye, Version 1.0!</b><br>
+We released version 2.0 with better implementation. :)
 
-<h3>setToken()</h3>
+
+# Functions
+
+| Function  | Description |
+| ------------- | ------------- |
+| get()  | Validate CSRF only for GET requests  |
+| post()   | Validate CSRF only for POST requests   |
+| all()   | Validate CSRF for GET & POST requests   |
+| token()   | Generate CSRF Token   |
+| flushToken()  | Remove all tokens |
+
+
+# Installation
+
 <br>
-setToken() function is used to generate random token.
+<i><b>Including File</b></i>
 <br><br>
-<i><b>Example</b></i>
+<p>Download the <b>csrf.php</b> file in directory <b>src</b>. Then include it in your PHP file.</p>
 <br><br>
 
 ```php
 <?php 
-  include("csrfhandler.lib.php");
+  require_once("path/csrf.php");
+  use csrfhandler\csrf as csrf;
 ?>
+```
 
-<form action="" method="post">
-    <input type="hidden" name="_token" value="<?php echo csrf::setToken();?>"/>
+# Usages
+
+<p>
+ This <b>CSRF-Handler</b> will look for a <i>form-data</i> / <i>url-parameter</i> called <b>_token</b>. To verify the request, <i>POST</i> request need to have a <b>_token</b> in <i>form-data</i>. And <i>GET</i> request need to have a <b>_token</b> in <i>url-parameter</i>.  
+</p>
+
+
+### Generating Token
+
+```php
+<form>
+  <input type="hidden" name="_token" value="<?php echo csrf::token(); ?>">
 </form>
-
 ```
-<br>
-<h3>checkToken()</h3>
-<br>
-checkToken() function is used to check the incoming random token.<br>
-If the token valid, It will return <b>true</b>, Otherwise It will return <b>false</b>
-<br><br>
-<i><b>Example</b></i>
-<br><br>
+
+### Validating Request
+
+<b>GET Request Only</b>
 
 ```php
-<?php
-
-include("csrfhandler.lib.php");
-
-$token = $_POST["_token"];
-$isValid = csrf::checkToken($token);
-
-if($isValid == true){
-
-//your code if valid
-
-}else{
-
-//your code if not-valid
-
-}
-
-?>
-
-
+  $isValid = csrf::get(); // return TRUE or FALSE
+  
+  if ( $isValid ) {
+  
+    //Do something if valid
+  
+  } else {
+  
+    //Do something if not vaid
+  
+  }
 ```
-<br>
-<h3>flushKeys()</h3>
-<br>
-flushKeys() function is used to delete all active CSRF Token Keys from Session.<br>
-<br><br>
-<i><b>Example</b></i>
-<br><br>
+
+<b>POST Request Only</b>
 
 ```php
-<?php
-
-include("csrfhandler.lib.php");
-
-  csrf::flushKeys();
-
-?>
-
-
+  $isValid = csrf::post(); // return TRUE or FALSE
+  
+  if ( $isValid ) {
+  
+    //Do something if valid
+  
+  } else {
+  
+    //Do something if not vaid
+  
+  }
 ```
 
+<b>GET & POST Request</b>
+
+```php
+  $isValid = csrf::all(); // return TRUE or FALSE
+  
+  if ( $isValid ) {
+  
+    //Do something if valid
+  
+  } else {
+  
+    //Do something if not vaid
+  
+  }
+```
+
+
+### Clear All Active Tokens
+
+```php
+  csrf::flushToken(); // will destroy all active tokens
+```
+
+
+# Examples
+
+<p>
+  You can find basic examples in <b><i>example/</i></b> directory. 
+  </p>
+  
+# License
+
+Licensed under MIT
