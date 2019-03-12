@@ -28,7 +28,14 @@
 			
 			$clientIp = self::getRealIpAddr();
 			
-			$hashedToken = base64_encode(password_hash(base64_encode($keySet.$userAgent.$clientIp), PASSWORD_BCRYPT));
+			if (phpversion() < 5.5)
+			{
+				$hashedToken = hash('sha256', base64_encode($keySet.$userAgent.$clientIp));
+			}
+			else
+			{
+				$hashedToken = base64_encode(password_hash(base64_encode($keySet.$userAgent.$clientIp), PASSWORD_BCRYPT));
+			}
 			
 			self::setToken($hashedToken);
 			
