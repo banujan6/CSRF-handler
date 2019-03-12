@@ -58,6 +58,10 @@
 			self::startSession();
 			
 			$tokenList = unserialize($_SESSION['X-CSRF-TOKEN-LIST']);
+			if (!is_array($tokenList))
+			{
+				$tokenList = array();
+			}			
 			array_push($tokenList, $token);
 			$_SESSION['X-CSRF-TOKEN-LIST'] = serialize($tokenList);
 		}
