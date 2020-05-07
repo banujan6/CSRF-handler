@@ -6,12 +6,13 @@
 	Thanks	:	http://itman.in - getRealIpAddr();
 	*/
 	namespace csrfhandler;
-	class csrf{
+	class csrf {
 		
 		private static function startSession()
 		{
 			if(!isset($_SESSION['X-CSRF-TOKEN-LIST'])){
 					session_start();
+					$_SESSION['X-CSRF-TOKEN-LIST'] = null; // initializing the index
 			}
 		}
 		
@@ -166,5 +167,4 @@
 			$_SESSION['X-CSRF-TOKEN-LIST'] = null;
 		}
 	} 
-	
-?>
+
