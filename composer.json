@@ -1,6 +1,7 @@
 {
     "name": "banujan6/csrf-handler",
 	"description": "CSRF token validator library for PHP",
+    "license": "MIT",
     "authors": [
         {
             "name": "Banujan Balendrakumar",
