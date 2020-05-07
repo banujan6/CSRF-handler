@@ -1,6 +1,6 @@
 <?php
 	//importing csrf handler
-	require_once('lib\csrfhandler.php');
+	require_once('lib//csrfhandler.php');
 	use csrfhandler\csrf as csrf;
 	
 	//check for only get & post requests
