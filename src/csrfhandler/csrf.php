@@ -10,12 +10,12 @@ class csrf {
 
     private static function startSession()
     {
-        if ( !isset($_SESSION) ) {
+        if ( !isset($_SESSION) && session_status() === PHP_SESSION_NONE) {
             session_start();
         }
 
         if ( !isset($_SESSION['X-CSRF-TOKEN-LIST']) ) {
-            $_SESSION['X-CSRF-TOKEN-LIST'] = null; // initializing the index
+            $_SESSION['X-CSRF-TOKEN-LIST'] = null; // initializing the index if not exist only
         }
     }
 
