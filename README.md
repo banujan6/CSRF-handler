@@ -1,8 +1,9 @@
-# CSRF-Handler ![version](https://img.shields.io/badge/Version-2.0.1-green.svg) ![stars](https://img.shields.io/github/stars/banujan6/CSRF-handler.svg) ![commit](https://img.shields.io/badge/Commit-Verified-brightgreen.svg)
+# [DEPRECATED] CSRF-Handler ![version](https://img.shields.io/badge/Version-2.0.1-green.svg) ![stars](https://img.shields.io/github/stars/banujan6/CSRF-handler.svg) ![commit](https://img.shields.io/badge/Commit-Verified-brightgreen.svg)
 <b>CSRF protection</b> class file for <b>PHP</b>.<br><br>
 <b>Bye Bye, Version 1.0!</b><br>
 We released version 2 with better implementation. :)
 
+# Please Note: We no longer maintain this project. Please Consider using PHP Frameworks for better built-in security.
 
 # Functions
 
